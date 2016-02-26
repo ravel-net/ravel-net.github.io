@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ravel a database-defined network
+title: Ravel&#58; a database-defined network
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
