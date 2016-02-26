@@ -2,11 +2,11 @@
 
 ## Quick setup
 
-### installing Jekyll ###
+### 1. Installing Jekyll ###
 
-### Setup github repository, connect jekyll ###
+### 2. Setup github repository, connect jekyll ###
 
-quick setup
+ quick setup
 : <http://jekyllbootstrap.com/usage/jekyll-quick-start.html>
 
 More details
