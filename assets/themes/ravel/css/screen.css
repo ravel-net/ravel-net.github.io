@@ -249,6 +249,23 @@ dt {
 
 dd { margin: 0 0 .4em 0; text-align: justify; }
 
+
+
+ul.compact { margin: 0; padding: 0;}
+ul.compact li { list-style: ;
+	list-style-type: square;
+	list-style-position: inside;
+}
+ul.compact li span.date {	
+	display: none;
+	color: grey;
+	width: 20%;
+}
+ul.compact li a {
+	width: 70%;
+}
+/* @end */
+
 /* @group Header */
 /* #header, #header a { color: #acbeb8; } */
 #header .hover { color: transparent; }
@@ -933,9 +950,9 @@ topleft a {
 
 #black-box{
     font-size:20px;
-    /* font-weight:bolder; */
+    font-weight:normal;
     
-    width: 1.2em;
+    width: 5em;
     position:fixed;
     /* top:.6em; */
     left: 1px;
@@ -943,11 +960,11 @@ topleft a {
     /* left:0%; */
     /* vertical-align: middle; */
 
-    text-align: center;
+    text-align: left;
     text-decoration:none;
     text-shadow: none;
 
-    line-height: 1.2em;
+    line-height: 1.5em;
     background: #667579;
 }
 
