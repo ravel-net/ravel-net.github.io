@@ -17,15 +17,14 @@ More details
 1. install Jekyll
 2. Clone/pull, Jekyll, and push
 
-{% highlight bash %}
-$ git clone https://github.com/ravel-net/ravel-net.github.io.git
-$ cd ravel-net.github.io.git
-$ jekyll s
-# preview website locally at localhost:4000
+	$ git clone https://github.com/ravel-net/ravel-net.github.io.git
+	$ cd ravel-net.github.io.git
+	$ jekyll s
+	# preview website locally at localhost:4000
 
-$ git pull
-# local edits
-$ git add .
-$ git push
-{% endhighlight %}
+	$ git pull
+	# local edits
+	$ git add .
+	$ git push
+
 
