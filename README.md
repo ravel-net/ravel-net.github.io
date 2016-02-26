@@ -6,11 +6,26 @@
 
 ### 2. Setup github repository, connect jekyll ###
 
- quick setup
+quick setup
 : <http://jekyllbootstrap.com/usage/jekyll-quick-start.html>
 
 More details
 : <http://jekyllbootstrap.com/>
 
 ## Usage
+
+1. install Jekyll
+2. Clone/pull, Jekyll, and push
+
+{% highlight bash %}
+$ git clone https://github.com/ravel-net/ravel-net.github.io.git
+$ cd ravel-net.github.io.git
+$ jekyll s
+# preview website locally at localhost:4000
+
+$ git pull
+# local edits
+$ git add .
+$ git push
+{% endhighlight %}
 
