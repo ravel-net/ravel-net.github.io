@@ -17,6 +17,7 @@ More details
 1. install Jekyll
 2. Clone/pull, Jekyll, and push
 
+	```
 	$ git clone https://github.com/ravel-net/ravel-net.github.io.git
 	$ cd ravel-net.github.io.git
 	$ jekyll s
@@ -26,5 +27,5 @@ More details
 	# local edits
 	$ git add .
 	$ git push
-
+	```
 
