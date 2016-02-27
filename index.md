@@ -14,7 +14,7 @@ tagline: Supporting tagline
 
 ## Tutorials
 
-[Ravel walkthrough]({{site.url}}tutorials.html)
+[Ravel walkthrough]({{site.url}}tutorials.html) ...
 
 ## Manual ##
 
