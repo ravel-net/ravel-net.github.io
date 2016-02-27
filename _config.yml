@@ -6,7 +6,6 @@ author :
 
 baseurl: /
 domain_name: 'ravel-net.org'
-url: 'https://ravel-net.org'
 
 permalink: /:categories/:year/:month/:day/:title
 production_url : http://ravel-net.github.io
