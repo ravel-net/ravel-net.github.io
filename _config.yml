@@ -1,16 +1,18 @@
 # gems: ['jekyll-lunr-js-search']
 
-permalink: /:categories/:year/:month/:day/:title
-
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-# highlighter: pygments
-highlighter: rouge
-
 title : Ravel a database-defined network
 tagline: Site Tagline
 author :
 
+baseurl: /
+domain_name: 'ravel-net.org'
+url: 'https://ravel-net.org'
+
+permalink: /:categories/:year/:month/:day/:title
 production_url : http://ravel-net.github.io
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+highlighter: rouge
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
