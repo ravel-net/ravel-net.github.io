@@ -5,7 +5,10 @@ description: ""
 ---
 {% include JB/setup %}
 
-## To start the CLI ##
+* TOC
+{:toc}
+
+## start the CLI ##
 
 {% highlight bash %}
 sudo ./ravel.py
