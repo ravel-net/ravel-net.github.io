@@ -14,9 +14,10 @@ tagline: Supporting tagline
 
 ## Tutorials
 
-[Ravel walkthrough]({{site.url}}tutorials.html) ...
+- [Ravel walkthrough]({{site.url}}tutorials) ...
+- [orchestration example]({{site.url}}orch_example)
 
 ## Manual ##
 
-[Manual]({{site.url}}manual.html)
+[Manual]({{site.url}}manual)
 
