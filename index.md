@@ -9,14 +9,17 @@ Ravel is a software-defined networking (SDN) controller that uses a standard SQL
 
 In Ravel, the entire network control infrastructure is implemented within a SQL database.  Abstractions of the network take the form of _SQL views_ expressed by SQL queries that can be instantiated and extended on the fly.  To allow multiple simultaneous abstractions to collectively drive control, Ravel automatically _orchestrates_ the abstractions to merge multiple views into a coherent forwarding behavior.
 
+For more information, read through our [Publications]({{site.url}}publications).
+
 
 ## Get Started ##
 
 Download the Ravel VM (<span style="color:red">TODO:</span> VM link) or check out the code on GitHub (<span style="color:red">TODO:</span> Repo link), then try the [Walkthrough]({{site.url}}walkthrough).
 
+
 ## Contribute ##
 
-Develop your own applications!  Read our Documentation (<span style="color:red">TODO:</span> manual link) and check out our API (<span style="color:red">TODO:</span> API link).
+Develop your own applications!  Read our Documentation (<span style="color:red">TODO:</span> manual link) and take a look at the API (<span style="color:red">TODO:</span> API link).
 
 <br/>
 
