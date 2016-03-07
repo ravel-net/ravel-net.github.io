@@ -21,7 +21,7 @@ Download the Ravel VM (<span style="color:red">TODO:</span> VM link) or check ou
 
 ## Contribute ##
 
-Develop your own applications!  Read our Documentation (<span style="color:red">TODO:</span> manual link) and take a look at the API (<span style="color:red">TODO:</span> API link).
+Develop your own applications!  Read our Documentation (<span style="color:red">TODO:</span> manual link) and take a look at the [API](api/annotated.html).
 
 <br/>
 
