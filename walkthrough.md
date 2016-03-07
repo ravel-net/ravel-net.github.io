@@ -33,13 +33,13 @@ By default, Ravel will start Mininet and load the specified Mininet topology int
 
 To specify a Mininet-style topology, use the parameter `--topo=TOPO`.  Ravel also accepts custom topologies in a Mininet format using the parameter `--custom=CUSTOM`.  For detailed documentation on creating custom topologies, refer to the [Mininet walkthrough](http://mininet.org/walkthrough/#custom-topologies).  For example, to start Mininet in the background with single switch and two hosts:
 
-    $ sudo ./ravel.py --topo=single,2
+    $ sudo ./ravel.py --topo=single,3
 
 
 #### PostgreSQL
 To start Ravel without Mininet (e.g., to run database tests or if using a topology too large for mininet), use the `--onlydb` flag.  For example, to start the Ravel CLI and load the topology into the Postgres database without starting Mininet:
 
-    $ sudo ./ravel.py --topo=single,2 --onlydb
+    $ sudo ./ravel.py --topo=single,3 --onlydb
 
 To specify the database name and username, use the options `--db=DB` and `--user=USER`.  To force a password prompt for the database, use `--password`.  This is roughly equivalent to connecting to Postgres with `psql --dbname=DB --username=USER --password`.  The default database name and username can be set in _ravel.cfg_.
 
