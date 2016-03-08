@@ -16,14 +16,9 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 ## Get Started ##
 
-Download the Ravel VM (<span style="color:red">TODO:</span> VM link) or check out the code on GitHub (<span style="color:red">TODO:</span> Repo link), then try the [Walkthrough]({{site.url}}walkthrough).
+Download the [Ravel VM]({{site.url}}download/#option-1-pre-packaged-vm) or [install from source]({{site.url}}download/#option-2-install-from-source) from our GitHub repo (<span style="color:red">TODO:</span> Repo link).  Then try the [Walkthrough]({{site.url}}walkthrough).
 
 
 ## Contribute ##
 
-Develop your own applications!  Read our Documentation (<span style="color:red">TODO:</span> manual link) and take a look at the [API](api/annotated.html).
-
-<br/>
-
-## Old Pages: ##
-- [orchestration example]({{site.url}}orch_example)
+Develop your own applications!  Read our [developer guide]({{site.url}}develop) or browse through the [API](api/annotated.html).
