@@ -48,21 +48,31 @@ To set up a new virtual machine in VirtualBox:
     cd REPO_NAME
     util/install.sh [options]
 
+3. Update _ravel.cfg_ with the _absolute_ path to Pox.  If installing Pox with _install.sh_, this will be Ravel's parent directory.
+
 Options for `install.sh` are:
 
 * `-a`: install all required packages, including Mininet, Pox, and PostgreSQL
 * `-m`: install only Mininet and Pox (ie, Mininet install with options `-kmnvp`)
 * `-p`: install only PostgreSQL
-* `-r`: install Python libraries needed for Ravel, configure PostgreSQL and extensions
+* `-r`: install Python libraries required by Ravel, configure PostgreSQL and extensions
 
-#### Configure PostgreSQL Authentication
 
-By default, PostgreSQL uses _peer_ authentication, in which the client's username authenticates a connection to the database.  Ravel requires either _trust_ (anyone can connect) or _md5_ (password-based) authentication.  If using _md5_, you must start Ravel with the `--password` flag to force a prompt for the password (eg, `sudo ./ravel.py --topo single,3 --password`).  Modify the file `/etc/postgresql/9.3/main/pg_hba.conf` and set _postgres_ and _all_ users to _trust_ or _md5_.  Alternatively, when running `install.sh` with `-a` or `-r`, you will be prompted to make this change automatically.
+#### Configure PostgreSQL
+
+By default, PostgreSQL uses _peer_ authentication, in which the client's username authenticates a connection to the database.  Ravel requires either _trust_ (any user can connect) or _md5_ (password-based) authentication.  If using _md5_, you will need to start Ravel with the `--password` flag to force a prompt for the password (eg, `sudo ./ravel.py --topo single,3 --password`).
+
+To set modify the authentication method, edit `/etc/postgresql/9.3/main/pg_hba.conf` and set _postgres_ and _all_ users to _trust_ or _md5_.  Alternatively, when running `install.sh` with `-a` or `-r`, you will be prompted to make this change automatically.
+
+_install.sh_ will create a PostgreSQL user `ravel` and database `ravel`.  To connect directly to this PostgreSQL database, use:
+
+    psql -Uravel
+    \c ravel
 
 
 #### Optional: Configure _ovs-ofctl_
 
-Ravel supports multiple protocols for database triggers to interact with the OpenFlow switches.  This allows changes in the database can be propogated to the network.  Supported protocols, configured in `ravel.cfg`, are: message queues (the default protocol), RPC, and `ovs-ofctl`.  If using the `ovs-ofctl` command, you must set passwordless sudo so database triggers can invoke the command:
+Ravel supports multiple protocols for database triggers to interact with the OpenFlow switches.  This allows changes in the database to be propagated to the network.  Supported protocols, configured in `ravel.cfg`, are: message queues (the default protocol), RPC, and `ovs-ofctl`.  If using the `ovs-ofctl` command, you must set passwordless sudo so database triggers can invoke the command:
 
 1. Add the postgres user to sudoers
 

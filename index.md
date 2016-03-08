@@ -13,12 +13,10 @@ In Ravel, the entire network control infrastructure is implemented within a SQL 
 
 For more information, read through our [Publications]({{site.url}}publications).
 
+<br/>
 
 ## Get Started ##
 
 Download the [Ravel VM]({{site.url}}download#option-1-pre-packaged-vm) or [install from source]({{site.url}}download#option-2-install-from-source) from our GitHub repo (<span style="color:red">TODO:</span> Repo link).  Then try the [Walkthrough]({{site.url}}walkthrough).
 
-
-## Contribute ##
-
-Develop your own applications!  Read our [developer guide]({{site.url}}develop) or browse through the [API](api/annotated.html).
+Or develop your own applications!  Read our [developer guide]({{site.url}}develop) and browse through the [API](api/annotated.html).
