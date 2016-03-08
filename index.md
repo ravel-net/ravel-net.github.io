@@ -16,7 +16,7 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 ## Get Started ##
 
-Download the [Ravel VM]({{site.url}}download/#option-1-pre-packaged-vm) or [install from source]({{site.url}}download/#option-2-install-from-source) from our GitHub repo (<span style="color:red">TODO:</span> Repo link).  Then try the [Walkthrough]({{site.url}}walkthrough).
+Download the [Ravel VM]({{site.url}}download#option-1-pre-packaged-vm) or [install from source]({{site.url}}download#option-2-install-from-source) from our GitHub repo (<span style="color:red">TODO:</span> Repo link).  Then try the [Walkthrough]({{site.url}}walkthrough).
 
 
 ## Contribute ##
