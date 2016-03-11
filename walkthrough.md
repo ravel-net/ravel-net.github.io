@@ -1,7 +1,8 @@
 ---
 layout: page
-title: "Ravel Walkthrough"
-description: ""
+title: "Tutorial"
+description: "Ravel Walkthrough"
+group: navigation
 ---
 {% include JB/setup %}
 

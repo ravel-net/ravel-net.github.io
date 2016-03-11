@@ -1,12 +1,13 @@
 ---
 layout: page
 title: "Publications"
-description: ""
+description: "Publications"
+group: navigation
 ---
 
 {% include JB/setup %}
 
----  
+<!-- ---   -->
 
 Anduo Wang, Xueyuan Mei, Jason Croft, Matthew Caesar, and Brighten Godfrey.  **Ravel: A Database-Defined Network**.  In _Symposium on SDN Research (SOSR)_, Santa Clara, CA, March 2016.  [<a href="docs/sosr16.pdf">pdf</a>]
 

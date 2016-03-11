@@ -1,11 +1,12 @@
 ---
 layout: page
-title: "Download Ravel"
-description: ""
+title: "Download"
+description: "Download and Install"
+group: navigation
 ---
 {% include JB/setup %}
 
--------------------------
+<!-- ------------------------- -->
 
 To use Ravel, download a virtual machine with all software pre-installed or download the code from GitHub and install from source.
 

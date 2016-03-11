@@ -1,11 +1,10 @@
 ---
 layout: page
 title: Ravel&#58; A Database-Defined Network
-tagline: Supporting tagline
+description: "Ravel&#58; A Database-Defined Network"
 ---
 {% include JB/setup %}
 
----  
 
 Ravel is a software-defined networking (SDN) controller that uses a standard SQL database to represent the network.  _Why a database?_ SDN fundamentally revolves around data representation--representation of the network topology and forwarding, as well as the higher-level abstractions useful to applications.
 
