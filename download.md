@@ -18,12 +18,12 @@ To use Ravel, download a virtual machine with all software pre-installed or down
 ### Option 1: Pre-Packaged VM
 
 1. Download one of the VM images with Ravel pre-installed:
-  - Ubuntu 14.04 LTS (32-bit)
-  - Ubuntu 14.04 LTS (64-bit)
+  - [Ubuntu 14.04 LTS (32-bit)](#)
+  - [Ubuntu 14.04 LTS (64-bit)](#)
 
 2. Install virtualization software, such as [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox) or [VMWare](https://my.vmware.com/en/web/vmware/downloads)
-3. Extract the downloaded VM image `ravelvm.zip`
-4. Create a new VM, using the extracted `ravelvm.vmdk` as the virtual disk
+3. Extract the downloaded VM image _ravelvm.zip_
+4. Create a new VM, using the extracted _ravelvm.vmdk_ as the virtual disk
 
 To set up a new virtual machine in VirtualBox:
 
@@ -35,19 +35,20 @@ To set up a new virtual machine in VirtualBox:
 7. Select _ravelvm.vmdk_ and press Open
 8. Click Next to complete the setup
 
+Log in with the username `ravel` and password `ravel`.  The `sudo` password is `ravel`.  To keep the VM size small, the Ubuntu installation does not have a GUI installed.  To install Unity, run `sudo apt-get install ubuntu-desktop`.
 
 -------------------------
 
 ### Option 2: Install from Source
 
-1. Check out a copy of Ravel's source code: <span style="color:red">TODO:</span>
+1. Check out a copy of Ravel's source code:
 
-    git clone REPO_LINK
+    `git clone http://github.com/ravel-net/ravel`
 
-2. Run the Ravel install script: <span style="color:red">TODO:</span>
+2. Run the Ravel install script:
 
-    cd REPO_NAME
-    util/install.sh [options]
+    `cd ravel`   
+    `util/install.sh [options]`
 
 3. Update _ravel.cfg_ with the _absolute_ path to Pox.  If installing Pox with _install.sh_, this will be Ravel's parent directory.
 
@@ -56,24 +57,25 @@ Options for `install.sh` are:
 * `-a`: install all required packages, including Mininet, Pox, and PostgreSQL
 * `-m`: install only Mininet and Pox (ie, Mininet install with options `-kmnvp`)
 * `-p`: install only PostgreSQL
-* `-r`: install Python libraries required by Ravel, configure PostgreSQL and extensions
+* `-r`: install Python libraries required by Ravel, configure PostgreSQL account and extensions
 
 
 #### Configure PostgreSQL
 
 By default, PostgreSQL uses _peer_ authentication, in which the client's username authenticates a connection to the database.  Ravel requires either _trust_ (any user can connect) or _md5_ (password-based) authentication.  If using _md5_, you will need to start Ravel with the `--password` flag to force a prompt for the password (eg, `sudo ./ravel.py --topo single,3 --password`).
 
-To set modify the authentication method, edit `/etc/postgresql/9.3/main/pg_hba.conf` and set _postgres_ and _all_ users to _trust_ or _md5_.  Alternatively, when running `install.sh` with `-a` or `-r`, you will be prompted to make this change automatically.
+To set modify the authentication method, edit _/etc/postgresql/9.3/main/pg_hba.conf_ and set _postgres_ and _all_ users to _trust_ or _md5_.  Alternatively, when running `install.sh` with `-a` or `-r`, you will be prompted to make this change automatically.
 
 _install.sh_ will create a PostgreSQL user `ravel` and database `ravel`.  To connect directly to this PostgreSQL database, use:
 
-    psql -Uravel
-    \c ravel
-
+{% highlight bash %}
+psql -Uravel
+\c ravel
+{% endhighlight %}
 
 #### Optional: Configure _ovs-ofctl_
 
-Ravel supports multiple protocols for database triggers to interact with the OpenFlow switches.  This allows changes in the database to be propagated to the network.  Supported protocols, configured in `ravel.cfg`, are: message queues (the default protocol), RPC, and `ovs-ofctl`.  If using the `ovs-ofctl` command, you must set passwordless sudo so database triggers can invoke the command:
+Ravel supports multiple protocols for database triggers to interact with the OpenFlow switches.  This allows changes in the database to be propagated to the network.  Supported protocols, configured in _ravel.cfg_, are: message queues (the default protocol), RPC, and _ovs-ofctl_.  If using the _ovs-ofctl_ command, you must set passwordless sudo so database triggers can invoke the command:
 
 1. Add the postgres user to sudoers
 

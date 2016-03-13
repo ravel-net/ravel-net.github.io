@@ -20,28 +20,65 @@ Applications can _propose_ updates (through an insertion, deletion, or update to
 
 Ravel uses a flat representation of the network and exposes the topology and forwarding tables as tables.  Tables that may be of interest to applications are described below.
 
-    # topology
-    tp(sid integer, nid integer, ishost integer, isactive integer, bw integer)
+{% highlight sql%}
+/* Topology table - pairs of connected nodes
+ * sid: switch id
+ * nid: next-hop id
+ * ishost: if nid is a host
+ * isactive: if the sid-nid link is online
+ * bw: link bandwidth
+ */
+tp(sid integer, nid integer, ishost integer, isactive integer, bw integer)
 
-    # hosts
-    hosts (hid integer, ip varchar, mac varchar, name varchar)
+/* Configuration table - per-switch flow configuration
+ * fid: flow id
+ * pid: id of previous-hop node
+ * sid: switch id
+ * nid: id of next-hop node
+ */
+cf (fid integer, pid integer, sid integer, nid integer)
 
-    # switches
-    switches (sid integer, dpid varchar, ip varchar, mac varchar, name varchar)
+/* Reachability matrix - end-to-end reachability matrix
+ * fid: flow id
+ * src: the IP address of the source node
+ * dst: the IP address of the destination node
+ * vol: volume allocated for the flow
+ * FW: if flow should pass through a firewall
+ * LB: if flow should be load balanced
+ */
+tm (fid integer, src integer, dst integer, vol integer, FW integer, LB integer)
+{% endhighlight %}
 
-    # nodes (hosts and switches)
-    nodes (id integer, name varchar)
+Additional node tables include:
 
-    # configuration (forwarding) table
-    cf (fid integer, pid integer, sid integer, nid integer)
+{% highlight sql%}
+/* Host table
+ * hid: host id
+ * ip: host's IP address
+ * mac: host's MAC address
+ * name: hostname (in Mininet)
+ */
+hosts (hid integer, ip varchar, mac varchar, name varchar)
 
-    # traffic (reachability) matrix
-    tm (fid integer, src integer, dst integer, vol integer, FW integer, LB integer)
+/* Switch table
+ * sid: switch id (primary key, NOT datapath id)
+ * dpid: datapath id
+ * ip: switch's IP address
+ * mac: switch's MAC address
+ * name: switch's name (in Mininet) 
+ */
+switches (sid integer, dpid varchar, ip varchar, mac varchar, name varchar)
 
+/* Node view - all nodes and switches in the network
+ * id: the node's id from its respective table (hosts.hid or switches.sid)
+ * name: the node's name
+ */
+nodes (id integer, name varchar)
+{% endhighlight %}
     
 
 ### Developing Applications
-Applications in Ravel can consist of two components: an implementation in SQL and a sub-shell implemented in Python.  Application sub-shells provide commands to monitor and control the application from the Ravel CLI.  Name the SQL file `[appname].sql` and the Python file `[appname].py`, and place them in the `apps/` directory.  The CLI will search for SQL and Python files in this directory.
+Applications in Ravel can consist of two components: an implementation in SQL and a sub-shell implemented in Python.  Application sub-shells provide commands to monitor and control the application from the Ravel CLI.  Name the SQL file _[appname].sql_ and the Python file _[appname].py_, and place them in the _apps/_ directory.  The CLI will search for SQL and Python files in this directory.
 
 For an overview of the CLI and application superclasses, see the [API](api/annotated.html).
 
@@ -50,7 +87,7 @@ For an overview of the CLI and application superclasses, see the [API](api/annot
 An application's SQL component can create tables, views on Ravel base tables, 
 or add triggers to Ravel base tables.  To interact with orchestration, an application must define its constraints and a protocol for reconciling conflicts.  To add constraints, create a violation table in the form `appname_violation`.  To create a repair protocol, add a rule in the form `appname_repair`.
 
-For example, suppose we want to implement a bandwidth monitor that limits flows to a particular rate (see `apps/merlin.sql` for the full implementation).  We can create a table to store the rate for each flow:
+For example, suppose we want to implement a bandwidth monitor that limits flows to a particular rate (see _apps/merlin.sql_ for the full implementation).  We can create a table to store the rate for each flow:
 
 {% highlight sql %}
 CREATE TABLE bw_policy (

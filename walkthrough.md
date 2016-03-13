@@ -51,7 +51,7 @@ To reconnect to an existing database state, use the `--reconnect` flag.  _Note_:
 
 The default verbosity level is `info`.  Use the `--verbosity=LEVEL` parameter to specify one of: `error`, `warning`, `info`, `debug`.
 
-    $ sudo ./rave.py --topo=single,3 --verbosity=debug
+    $ sudo ./ravel.py --topo=single,3 --verbosity=debug
 
 
 
@@ -93,22 +93,7 @@ Ravel also provides a connection to the Mininet instance started in the backgrou
 To drop into a Mininet sub-shell, type `m` with no additional parameters:
 
     ravel> m
-    mininet> h1 ping h2
-
-
-#### Flows
-
-To add a flow between hosts, use `addflow`, with Mininet names as the hosts' names:
-
-    ravel> addflow h1 h2
-
-To delete a flow, use `delflow`, specifying either the hosts' names or flow ID (i.e., fid from the table cf).
-
-    ravel> p SELECT * FROM rtm;
-      fid    host1    host2
-    -----  -------  -------
-        1        1        2
-    ravel> delflow 1
+    mn> h1 ping h2
 
 
 #### Performance
@@ -125,22 +110,38 @@ To report detailed execution time:
 
 -------------------------
 
-### Part 3: Applications and Sub-shells
+### Part 3: Orchestration
+
+In Ravel, application are loaded using the `orch` (orchestration) command.  Orchestration translates high-level application operations onto Ravel's base tables and coordinates the resulting updates for multiple applications running simultaneously.
+
+To load one or more applications, specify a list of applications in ascending order of priority using the `load` command:
+
+    ravel> orch load sample routing fw
+
+Orchestration will assign _fw_ the highest priority.  Priorities are used to manage conflicts in updates proposed by different applications. Updates from higher-priority applications will override updates from lower-priority ones.  _Note:_ the `load` command requires a total ordering of applications.  When running the command a second time, any applications that are not listed in the second `load` call will be unloaded automatically.
+
+Under orchestration, each application can propose a change.  To commit a change for mediation, use `orch run`.  To automatically commit changes, use `orch auto on`.  To disable, use `orch auto off`.  For example:
+
+    ravel> orch load routing
+    ravel> orch rt addflow h1 h2
+    ravel> orch run
+
+This is the same as:
+
+    ravel> orch load routing
+    ravel> orch auto on
+    ravel> orch rt addflow h1 h2
+
+
+
+-------------------------
+
+### Part 4: Applications and Sub-shells
 
 Ravel searches for available applications placed in the _apps_ directory.  To view discovered applications and their state:
 
     ravel> apps
 
-
-#### Loading and Unloading Applications
-
-To load one or more applications:
-
-    ravel> load sample pga
-
-To unload one or more applications:
-
-    ravel> unload sample pga
 
 #### Application Shells
 
@@ -178,59 +179,83 @@ To see a description of an application and its available commands, use:
     ravel> help sample
 
 
+#### Application: Routing
+
+To add a flow between hosts, load the `routing` application and use the `addflow` commadn with Mininet names as the hosts' names:
+
+    ravel> orch load routing
+    ravel> orch auto on
+    ravel> rt addflow h1 h2
+
+To set the firewall attribute for a flow, specifying that it should be routed through a firewall, if possible, append a 1 to the `addflow` command:
+
+    ravel> rt addflow h1 h2 1
+
+
+To delete a flow, use `delflow`, specifying either the hosts' names or flow ID (i.e., fid from the table rm).
+
+    ravel> p SELECT * FROM rm;
+      fid    host1    host2
+    -----  -------  -------
+        1        1        2
+    ravel> rt delflow 1
+    
+
+#### Application: Firewall
+
+The firewall application implements a stateful firewall.  To add a (src,dst) pair to the whitelist, using Mininet hostnames:
+
+    ravel> orch load fw
+    ravel> fw addflow h1 h2
+
+To add a host to the whitelist, to allow a host to initiate an outbound connection:
+
+    ravel> fw addhost h1
+
+To remove a host or flow from the whitelist:
+
+   ravel> fw delflow h1 h2
+   ravel> fw delhost h1
+
+
 
 -------------------------
 
-### Part 4: Orchestration
+### Part 5: Orchestration Demo
 
-Orchestration translates high-level application operations onto Ravel's base tables and coordinates the resulting updates.  When running multiple applications, it is recommended to use orchestration.
-
-First, load the orchestration application:
-(<span style="color:red">TODO:</span> orchestration app naming)
-
-    ravel> load orch_auto
-
-Next, specify a list of (loaded or unloaded) applications in descending order of priority using the `set` command.  Priorities are used to manage conflicts between proposed updates.  Updates from higher-priority applications will override updates from lower-priority ones.  To load the PGA application with the highest priority and routing with the lowest priority:
-
-    ravel> orch_auto set pga merlin fw routing
-
-_Note:_ any previous loaded applications that are not specified in the `set` command will be automatically unloaded.  Any unloaded applications that are specified in the `set` command will be automatically loaded.
-
-#### Demo
-
-<span style="color:red">TODO:</span> application descriptions (ie, firewall policy, pga policy, etc)
-
-Now, let's see orchestration in action.  First, start the Ravel CLI with the toy topology in the _topo_ directory:
+Now, let's see orchestration in action by combining the routing and firewall applications.  First, start the Ravel CLI with the toy topology in the _topo_ directory:
 
     $ sudo ./ravel.py --custom=topo/toy_dtp.py --topo mytopo
 
-Load applications PGA, Merlin, Kinetic (FW), and Routing:
+Load the routing and firewall applications, with the firewall application having higher priority:
 
-    ravel> load orch_auto
-    ravel> orch_auto set pga merlin fw routing
+    ravel> orch load routing fw
 
-Launch a separate xterm to watch for a policy violations:
+Next, add a flow and a host to the whitelist:
 
-    ravel> orch_auto watch
+    ravel> fw addhost h4
+    ravel> fw addhost h2
+    ravel> fw addflow h4 h3
 
-Try to add a flow between hosts _h1_ and _h2_ and observe the violation in the _watch_ terminal:
+Launch a watch window to observe insertions to the configuration table, firewall policy table, and firewall violation table:
 
-    ravel> addflow h1 h2
-    ravel> orch_auto run
+    ravel> watch rm cf fw_violations fw_policy_acl
 
-Confirm that the route is dropped using ping:
+Add a flow in the flow whitelist:
 
-    ravel> m h1 ping h2
+    ravel> rt addflow h4 h3
+    ravel> orch run
 
-Next, try to add a flow in the reverse direction.  Observe no policy is violated and confirm the route is installed:
+Observe that the flow is installed in the configuration table (`cf`) and the the hosts can ping each other:
 
-    ravel> addflow h2 h1
-    ravel> orch_auto run
-    ravel> m h1 ping h2
+    ravel> m h4 ping h3
 
-<span style="color:red">TODO:</span> add command select fid
-Now, delete the flow and confirm the route is removed:
+Now try adding a flow that is not in the approved flow or host whitelist, by attempting to creat a connection from an external host:
 
-     ravel> delflow 2
-     ravel> orch_auto run
-     ravel> m h1 ping h2
+    ravel> rt addflow h1 h2
+
+Observe a new row is inserted into the firewall violation table.  Next, commit the change:
+
+   ravel> orch run
+
+Observe that the firewall application repairs the violation by removing the proposed flow from the reachability table (`rm`).

@@ -14,8 +14,14 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 <br/>
 
+## News ##
+
+#### 2016 ####
+* March 14: Prof. Wang presents _Ravel: A Database-Defined Network_ at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/)
+* March 14: [Ravel v0.1](http://github.com/ravel-net/ravel) is released
+
 ## Get Started ##
 
-Download the [Ravel VM]({{site.url}}download#option-1-pre-packaged-vm) or [install from source]({{site.url}}download#option-2-install-from-source) from our GitHub repo (<span style="color:red">TODO:</span> Repo link).  Then try the [Walkthrough]({{site.url}}walkthrough).
+Download the [Ravel VM]({{site.url}}download#option-1-pre-packaged-vm) or [install from source]({{site.url}}download#option-2-install-from-source) from our [GitHub repository](http://github.com/ravel-net/ravel).  Then try the [Walkthrough]({{site.url}}walkthrough).
 
 Or develop your own applications!  Read our [developer guide]({{site.url}}develop) and browse through the [API](api/annotated.html).
