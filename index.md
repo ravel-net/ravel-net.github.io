@@ -17,8 +17,10 @@ For more information, read through our [Publications]({{site.url}}publications).
 ## News ##
 
 #### 2016 ####
-* March 14: Prof. Wang presents _Ravel: A Database-Defined Network_ at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/)
+* March 14: Prof. Wang presents _Ravel: A Database-Defined Network_ at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/sosr16slide.pdf) [[demo]](demo.mp4)
 * March 14: [Ravel v0.1](http://github.com/ravel-net/ravel) is released
+
+<br/>
 
 ## Get Started ##
 

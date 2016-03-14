@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Tutorial"
+title: "Walkthrough"
 description: "Ravel Walkthrough"
 group: navigation
 ---
@@ -85,7 +85,9 @@ To display real-time changes to a database table in a separate xterm window, use
 
     ravel> watch hosts 5
 
-To refresh the database and truncate all tables except the topology, use `reinit`.  _Note_: this will not clear switch flow tables.
+To refresh the database and truncate all tables except the topology (_note_: this will not clear switch flow tables):
+
+    ravel> reinit
 
 
 #### Mininet
@@ -248,11 +250,11 @@ Next, add a flow and a host to the whitelist:
 
 Launch a watch window to observe insertions to the configuration table, firewall policy table, and firewall violation table:
 
-    ravel> watch rm cf fw_violations fw_policy_acl
+    ravel> watch rm cf fw_violation fw_policy_acl
 
-Add a flow in the flow whitelist:
+Add a flow that is in the whitelist of approved flows, and specify that the flow should be routed through a firewall by appending a 1 to the `addflow` command:
 
-    ravel> rt addflow h4 h3
+    ravel> rt addflow h4 h3 1
     ravel> orch run
 
 Observe that the flow is installed in the configuration table (`cf`) and the the hosts can ping each other:
@@ -261,7 +263,7 @@ Observe that the flow is installed in the configuration table (`cf`) and the the
 
 Now try adding a flow that is not in the approved flow or host whitelist, by attempting to creat a connection from an external host:
 
-    ravel> rt addflow h1 h2
+    ravel> rt addflow h1 h2 1
 
 Observe a new row is inserted into the firewall violation table.  Next, commit the change:
 
