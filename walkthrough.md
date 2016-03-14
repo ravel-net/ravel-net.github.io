@@ -70,6 +70,10 @@ To display the current configuration (i.e., database name, username, application
 
     ravel> stat
 
+Ravel searches for available applications placed in the _apps_ directory.  To view discovered applications and their state:
+
+    ravel> apps
+
 
 #### SQL
 
@@ -100,11 +104,11 @@ To drop into a Mininet sub-shell, type `m` with no additional parameters:
 
 To report execution time for a command:
 
-    ravel> time addflow h1 h2
+    ravel> time [command]
 
 To report detailed execution time:
 
-    ravel> profile addflow h1 h2
+    ravel> profile [command]
 
 
 
@@ -116,37 +120,41 @@ In Ravel, application are loaded using the `orch` (orchestration) command.  Orch
 
 To load one or more applications, specify a list of applications in ascending order of priority using the `load` command:
 
-    ravel> orch load sample routing fw
+    ravel> orch load routing fw
 
-Orchestration will assign _fw_ the highest priority.  Priorities are used to manage conflicts in updates proposed by different applications. Updates from higher-priority applications will override updates from lower-priority ones.  _Note:_ the `load` command requires a total ordering of applications.  When running the command a second time, any applications that are not listed in the second `load` call will be unloaded automatically.
+Orchestration will assign `fw` the highest priority.  Priorities are used to manage conflicts in updates proposed by different applications. Updates from higher-priority applications will override updates from lower-priority ones.  _Note:_ the `load` command requires a total ordering of applications.  When running the command a second time, any applications that are not listed in the second `load` call will be unloaded automatically.
 
 Under orchestration, each application can propose a change.  To commit a change for mediation, use `orch run`.  To automatically commit changes, use `orch auto on`.  To disable, use `orch auto off`.  For example:
 
-    ravel> orch load routing
-    ravel> orch rt addflow h1 h2
+    ravel> orch load routing fw
+    ravel> rt addflow h1 h2
     ravel> orch run
 
 This is the same as:
 
-    ravel> orch load routing
+    ravel> orch load routing fw
     ravel> orch auto on
-    ravel> orch rt addflow h1 h2
+    ravel> rt addflow h1 h2
 
+To report execution or profiled times for flow modification commands, use `orch auto on`:
 
+    ravel> orch load routing fw
+    ravel> orch auto on
+    ravel> profile rt addflow h1 h2
+
+Or:
+
+    ravel> time rt addflow h1 h2
 
 -------------------------
 
 ### Part 4: Applications and Sub-shells
 
-Ravel searches for available applications placed in the _apps_ directory.  To view discovered applications and their state:
-
-    ravel> apps
-
-
 #### Application Shells
 
 Along with a SQL file containing application views, triggers, etc., an application can provide a Python file containing a sub-shell for monitoring and controlling the application.  For example, the sample application implements an `echo` command:
 
+    ravel> orch load sample
     ravel> sample echo Hello World
 
 To drop into an application's sub-shell, type the application's name (or shortcut) with no additional parameters:
@@ -186,6 +194,7 @@ To add a flow between hosts, load the `routing` application and use the `addflow
     ravel> orch load routing
     ravel> orch auto on
     ravel> rt addflow h1 h2
+    ravel> m h1 ping h2
 
 To set the firewall attribute for a flow, specifying that it should be routed through a firewall, if possible, append a 1 to the `addflow` command:
 
