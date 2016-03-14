@@ -12,13 +12,13 @@ group: navigation
 -------------------------
 
 ### Ravel Overview
-Ravel allows multiple applications to execute simultaneously and collectively drive network control.  This is accomplished through _orchestration_.  A Ravel user sets priorities on the orchestrated applications using the ordering passed to the `orch` application.  (For more details, see the orchestration demo in the [Walkthrough]({{site.url}}walkthrough#part-4-orchestration).)
+Ravel allows multiple applications to execute simultaneously and collectively drive network control.  This is accomplished through _orchestration_.  A Ravel user sets priorities on the orchestrated applications using the ordering passed to the `orch load` command.  (For more details, see the orchestration demo in the [Walkthrough]({{site.url}}walkthrough#part-4-orchestration).)
 
-Applications can _propose_ updates (through an insertion, deletion, or update to one of its views), which are then checked against all other orchestrated applications' policies.  If the proposed update violates the constraints of another application, a higher priority application can overwrite the update.
+Applications can _propose_ updates (through an insertion, deletion, or update to one of its views), which are then checked against the policies of all other orchestrated applications.  If the proposed update violates the constraints of another application, a higher priority application can overwrite the update.
 
 #### Ravel Base Tables
 
-Ravel uses a flat representation of the network and exposes the topology and forwarding tables as tables.  Tables that may be of interest to applications are described below.
+Ravel uses a flat representation of the network and exposes the topology and forwarding tables as SQL tables.  Tables that may be of interest to applications are:
 
 {% highlight sql%}
 /* Topology table - pairs of connected nodes
@@ -38,7 +38,7 @@ tp(sid integer, nid integer, ishost integer, isactive integer, bw integer)
  */
 cf (fid integer, pid integer, sid integer, nid integer)
 
-/* Reachability matrix - end-to-end reachability matrix
+/* Reachability matrix - end-to-end reachability
  * fid: flow id
  * src: the IP address of the source node
  * dst: the IP address of the destination node
@@ -78,14 +78,14 @@ nodes (id integer, name varchar)
     
 
 ### Developing Applications
-Applications in Ravel can consist of two components: an implementation in SQL and a sub-shell implemented in Python.  Application sub-shells provide commands to monitor and control the application from the Ravel CLI.  Name the SQL file _[appname].sql_ and the Python file _[appname].py_, and place them in the _apps/_ directory.  The CLI will search for SQL and Python files in this directory.
+Applications in Ravel can consist of two components: an implementation in SQL and a sub-shell implemented in Python.  Application sub-shells provide commands to monitor and control the application from the Ravel CLI.  Name the SQL file _[appname].sql_ and the Python file _[appname].py_, and place both files in the _apps/_ directory.  The CLI will search for SQL and Python files in this directory.
 
 For an overview of the CLI and application superclasses, see the [API](api/annotated.html).
 
 
 #### SQL Component
 An application's SQL component can create tables, views on Ravel base tables, 
-or add triggers to Ravel base tables.  To interact with orchestration, an application must define its constraints and a protocol for reconciling conflicts.  To add constraints, create a violation table in the form `appname_violation`.  To create a repair protocol, add a rule in the form `appname_repair`.
+or add triggers on Ravel base tables.  To interact with orchestration, an application must define its constraints and a protocol for reconciling conflicts.  To add constraints, create a violation table in the form `appname_violation`.  To create a repair protocol, add a rule in the form `appname_repair`.
 
 For example, suppose we want to implement a bandwidth monitor that limits flows to a particular rate (see _apps/merlin.sql_ for the full implementation).  We can create a table to store the rate for each flow:
 
@@ -118,7 +118,7 @@ CREATE RULE bw_repair AS
 {% endhighlight %}
 
 #### Python Sub-Shell
-To interact with an application, the Ravel CLI can load a shell with commands for monitoring and controlling the application's behavior.  This is an application _sub-shell_ launched from the Ravel CLI by typing the application's name or shortcut after it has been loaded.  To create a sub-shell, create a Python file and extend the class [AppConsole](api/classravel_1_1app_1_1AppConsole.html) and add the following variables:
+To interact with an application, the Ravel CLI can load a shell with commands for monitoring and controlling the application's behavior.  An application _sub-shell_ can be launched from the Ravel CLI by typing the application's name or shortcut after it has been loaded.  To create a sub-shell, create a Python file with a class extending [AppConsole](api/classravel_1_1app_1_1AppConsole.html) and add the following variables:
 
 * `shortcut`: defines a shortcut for the application from the Ravel CLI
 * `description`: a short description of the application
@@ -144,6 +144,6 @@ The [AppConsole](api/classravel_1_1app_1_1AppConsole.html) class contains the pr
 
 * `self.db`: a reference to [ravel.db.RavelDb](api/classravel_1_1db_1_1RavelDb.html)
 * `self.env`: a reference to [ravel.env.Environment](api/classravel_1_1env_1_1Environment.html), the CLI's executing environment
-* `self.components`: a list of [ravel.app.AppComponent](api/classravel_1_1app_1_1AppComponent.html), the application's SQL components (ie, tables, views, rules)
+* `self.components`: a list of [ravel.app.AppComponent](api/classravel_1_1app_1_1AppComponent.html), the application's SQL components (i.e., tables, views, rules)
 
 For more information about the application superclasses and their properties, see the [API](api/annotated.html).
