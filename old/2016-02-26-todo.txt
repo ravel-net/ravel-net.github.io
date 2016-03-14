@@ -1,15 +1,3 @@
----
-layout: post
-title: "todo"
-description: ""
-category: 
-tags: [features, SOSR]
----
-{% include JB/setup %}
-
-* TOC
-{:toc}
-
 ## Before SOSR'16 ##
 
 ### release distribution ###
