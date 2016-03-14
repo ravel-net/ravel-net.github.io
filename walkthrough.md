@@ -16,7 +16,7 @@ This walkthrough will demonstrate the Ravel CLI commands.  Throughout the tutori
 
 * `$` to denote Linux commands typed into the shell prompt
 * `ravel>` to denote commands typed into the Ravel CLI
-* `app_name>` to denote commands typed into application _app_name_'s sub-shell
+* `app_name>` to denote commands typed into the sub-shell of application _app_name_
 
 
 -------------------------
@@ -30,19 +30,19 @@ To display the help message describing Ravel's startup options:
 
 #### Mininet
 
-By default, Ravel will start Mininet and load the specified Mininet topology into a PostgreSQL database.
+By default, Ravel will start Mininet and load the specified Mininet topology into a PostgreSQL database.  To specify a Mininet-style topology, use the parameter `--topo=TOPO`.  The topology parameter is required.  Ravel also accepts custom topologies in a Mininet format using the parameter `--custom=CUSTOM`.  For detailed documentation on creating custom topologies, refer to the [Mininet walkthrough](http://mininet.org/walkthrough/#custom-topologies).
 
-To specify a Mininet-style topology, use the parameter `--topo=TOPO`.  Ravel also accepts custom topologies in a Mininet format using the parameter `--custom=CUSTOM`.  For detailed documentation on creating custom topologies, refer to the [Mininet walkthrough](http://mininet.org/walkthrough/#custom-topologies).  For example, to start Mininet in the background with single switch and two hosts:
+For example, to start Mininet in the background with single switch and three hosts:
 
     $ sudo ./ravel.py --topo=single,3
 
 
 #### PostgreSQL
-To start Ravel without Mininet (e.g., to run database tests or if using a topology too large for mininet), use the `--onlydb` flag.  For example, to start the Ravel CLI and load the topology into the Postgres database without starting Mininet:
+To start Ravel without Mininet (e.g., to run database scalability tests), use the `--onlydb` flag:
 
     $ sudo ./ravel.py --topo=single,3 --onlydb
 
-To specify the database name and username, use the options `--db=DB` and `--user=USER`.  To force a password prompt for the database, use `--password`.  This is roughly equivalent to connecting to Postgres with `psql --dbname=DB --username=USER --password`.  The default database name and username can be set in _ravel.cfg_.
+To specify the database name and username, use the options `--db=DB` and `--user=USER`.  To force a password prompt for the database, use `--password`.  This is equivalent to connecting to Postgres with `psql --dbname=DB --username=USER --password`.  The default database name and username can be set in _ravel.cfg_.
 
 To reconnect to an existing database state, use the `--reconnect` flag.  _Note_: this assumes the specified topology is the same as the one already loaded in the database.
 
@@ -70,7 +70,7 @@ To display the current configuration (i.e., database name, username, application
 
     ravel> stat
 
-Ravel searches for available applications placed in the _apps_ directory.  To view discovered applications and their state:
+Ravel searches for available applications placed in the _apps_ directory.  To view discovered applications and their status:
 
     ravel> apps
 
@@ -81,11 +81,11 @@ Ravel provides a connection the database specified in the command-line options (
 
     ravel> p SELECT * FROM hosts;
 
-To display real-time changes to a database table in a separate xterm window, use the `watch` command.  Specify the table name and optionally a limit on the number of rows:
+To display real-time changes to a database table in a separate xterm window, use the `watch` command.  Specify one or table names separated by spaces:
 
-    ravel> watch hosts 5
+    ravel> watch cf rm
 
-To refresh the database and truncate all tables except the topology (_note_: this will not clear switch flow tables):
+To refresh the database by truncating all tables except the topology (_note_: this will not clear switch flow tables):
 
     ravel> reinit
 
@@ -108,7 +108,7 @@ To report execution time for a command:
 
     ravel> time [command]
 
-To report detailed execution time:
+To report detailed execution time (if the command profiles individual operations):
 
     ravel> profile [command]
 
@@ -124,9 +124,9 @@ To load one or more applications, specify a list of applications in ascending or
 
     ravel> orch load routing fw
 
-Orchestration will assign `fw` the highest priority.  Priorities are used to manage conflicts in updates proposed by different applications. Updates from higher-priority applications will override updates from lower-priority ones.  _Note:_ the `load` command requires a total ordering of applications.  When running the command a second time, any applications that are not listed in the second `load` call will be unloaded automatically.
+Here, orchestration will assign `fw` the highest priority.  Priorities are used to manage conflicts in updates proposed by different applications. Updates from higher-priority applications will override updates from lower-priority ones.  _Note:_ the `load` command requires a total ordering of applications.  When running the command a second time, any applications that are not listed in the second `load` call will be unloaded automatically.
 
-Under orchestration, each application can propose a change.  To commit a change for mediation, use `orch run`.  To automatically commit changes, use `orch auto on`.  To disable, use `orch auto off`.  For example:
+Under orchestration, each application can propose a change.  To commit a change and check for conflicts with other running applications, use `orch run`.  To automatically commit changes, use `orch auto on`.  To disable, use `orch auto off`.  For example, to propose adding a flow:
 
     ravel> orch load routing fw
     ravel> rt addflow h1 h2
@@ -143,10 +143,7 @@ To report execution or profiled times for flow modification commands, use `orch 
     ravel> orch load routing fw
     ravel> orch auto on
     ravel> profile rt addflow h1 h2
-
-Or:
-
-    ravel> time rt addflow h1 h2
+    ravel> time rt addflow h1 h3
 
 -------------------------
 
@@ -154,7 +151,7 @@ Or:
 
 #### Application Shells
 
-Along with a SQL file containing application views, triggers, etc., an application can provide a Python file containing a sub-shell for monitoring and controlling the application.  For example, the sample application implements an `echo` command:
+Along with a SQL file containing application tables, views, and rules, an application can provide a Python file containing a sub-shell for monitoring and controlling the application.  For example, the sample application implements an `echo` command:
 
     ravel> orch load sample
     ravel> sample echo Hello World
@@ -178,20 +175,20 @@ To print help for an application's commands, open it's shell for normal use of t
     ravel> sample
     sample> help echo
 
-Or, type `help [app name] [app command` from the Ravel CLI.  (_Note_: an application must be loaded for its help to be accessible from the main CLI.)
+Or, type `help [app name] [app command]` from the Ravel CLI.  (_Note_: an application must be loaded for its help to be accessible from the main CLI.)
 
-    ravel> load sample
+    ravel> orch load sample
     ravel> help sample echo
 
 To see a description of an application and its available commands, use:
 
-    ravel> load sample
+    ravel> orch load sample
     ravel> help sample
 
 
 #### Application: Routing
 
-To add a flow between hosts, load the `routing` application and use the `addflow` commadn with Mininet names as the hosts' names:
+To add a flow between hosts, load the `routing` application and use the `addflow` command with Mininet names as the hosts' names:
 
     ravel> orch load routing
     ravel> orch auto on
@@ -225,8 +222,8 @@ To add a host to the whitelist, to allow a host to initiate an outbound connecti
 
 To remove a host or flow from the whitelist:
 
-   ravel> fw delflow h1 h2
-   ravel> fw delhost h1
+    ravel> fw delflow h1 h2
+    ravel> fw delhost h1
 
 
 
@@ -238,7 +235,7 @@ Now, let's see orchestration in action by combining the routing and firewall app
 
     $ sudo ./ravel.py --custom=topo/toy_dtp.py --topo mytopo
 
-Load the routing and firewall applications, with the firewall application having higher priority:
+Load the routing and firewall applications, assigning higher priority to the firewall application:
 
     ravel> orch load routing fw
 
@@ -261,12 +258,12 @@ Observe that the flow is installed in the configuration table (`cf`) and the the
 
     ravel> m h4 ping h3
 
-Now try adding a flow that is not in the approved flow or host whitelist, by attempting to creat a connection from an external host:
+Now, try adding a flow that is not in the approved flow or host whitelist, by proposing a flow with an external host as the source:
 
     ravel> rt addflow h1 h2 1
 
 Observe a new row is inserted into the firewall violation table.  Next, commit the change:
 
-   ravel> orch run
+    ravel> orch run
 
-Observe that the firewall application repairs the violation by removing the proposed flow from the reachability table (`rm`).
+Observe that the firewall application repairs the violation by removing the proposed flow from the reachability table `rm`.
