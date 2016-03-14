@@ -83,5 +83,5 @@ Ravel supports multiple protocols for database triggers to interact with the Ope
 
 2. Allow passwordless sudo by editing /etc/sudoers (eg, using `sudo visudo`) and set the user specification to:
 
-    sudo ALL=(ALL) NOPASSWD:ALL
+    ALL ALL=(ALL) NOPASSWD:ALL
 
