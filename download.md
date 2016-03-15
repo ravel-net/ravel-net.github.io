@@ -43,7 +43,8 @@ Log in to the VM with the username `ravel` and password `ravel`.  The sudo passw
 
 1. Check out a copy of Ravel's source code:
 
-    `git clone http://github.com/ravel-net/ravel`
+    `git clone http://github.com/ravel-net/ravel`   
+    `git checkout v0.1`
 
 2. Run the Ravel install script:
 
