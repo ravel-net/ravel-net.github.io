@@ -48,7 +48,7 @@ Log in to the VM with the username `ravel` and password `ravel`.  The sudo passw
 2. Run the Ravel install script:
 
     `cd ravel`   
-    `git checkout v0.1`
+    `git checkout v0.1`   
     `util/install.sh [options]`
 
 3. Update _ravel.cfg_ with the __*absolute*__ path to Pox.  If installing Pox with _install.sh_, this will be Ravel's parent directory.
