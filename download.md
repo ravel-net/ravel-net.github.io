@@ -8,7 +8,7 @@ group: navigation
 
 <!-- ------------------------- -->
 
-To use Ravel, download a virtual machine with all software pre-installed or download the code from GitHub and install from source.
+To try Ravel, download a virtual machine with all software pre-installed or download the code from GitHub and install from source.
 
 * TOC
 {:toc}
