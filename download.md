@@ -8,7 +8,7 @@ group: navigation
 
 <!-- ------------------------- -->
 
-To use Ravel, download a virtual machine with all software pre-installed or download the code from GitHub and install from source.
+To try Ravel, download a virtual machine with all software pre-installed or download the code from GitHub and install from source.
 
 * TOC
 {:toc}
@@ -43,11 +43,12 @@ Log in to the VM with the username `ravel` and password `ravel`.  The sudo passw
 
 1. Check out a copy of Ravel's source code:
 
-    `git clone http://github.com/ravel-net/ravel`
+    `git clone http://github.com/ravel-net/ravel`   
 
 2. Run the Ravel install script:
 
     `cd ravel`   
+    `git checkout v0.1`   
     `util/install.sh [options]`
 
 3. Update _ravel.cfg_ with the __*absolute*__ path to Pox.  If installing Pox with _install.sh_, this will be Ravel's parent directory.
