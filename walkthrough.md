@@ -112,6 +112,7 @@ To report detailed execution time (if the command profiles individual operations
 
     ravel> profile [command]
 
+(_Note_: the profile command only monitors operations when running Ravel with Mininet, i.e., starting Ravel without the `--only-db` parameter.)
 
 
 -------------------------
