@@ -153,7 +153,7 @@ For more information about the application superclasses and their properties, se
 ### Measuring Performance
 The Ravel CLI provides the command `time` to measure the execution time of a command, similar to the Linux time command: `time [command] [command args]`.
 
-For more granular inspection of performance, the Ravel CLI provides a `profile` command.  This command reports the execution time of manually-defined blocks of code.  When extending the Ravel runtime or developing applications, a new block of code can be defined using the class [profiling.PerfCounter](api/classravel_1_1profiling_1_1PerfCounter.html).  The constructor accepts a string to identify the block of code.  The functions start() and stop() define the start and end of the code to be profile:
+For more granular inspection of performance, the Ravel CLI provides a `profile` command.  This command reports the execution time of manually-defined blocks of code.  When extending the Ravel runtime or developing applications, a new block of code can be defined using the class [profiling.PerfCounter](api/classravel_1_1profiling_1_1PerfCounter.html).  The constructor accepts a string to identify the block of code.  The functions [start()](api/classravel_1_1profiling_1_1PerfCounter.html#a5668f7bc8650c3e6e308f888f7d6dbec) and [stop()](api/classravel_1_1profiling_1_1PerfCounter.html#ad268c2cff4282db907b7c8570afe6a98) define the start and end of the code to be profile:
 
 {% highlight python %}
 from ravel.profiling import PerfCounter
