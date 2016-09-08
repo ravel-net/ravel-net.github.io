@@ -252,7 +252,7 @@ Launch a watch window to observe insertions to the configuration table, firewall
 
 Add a flow that is in the whitelist of approved flows, and specify that the flow should be routed through a firewall by appending a 1 to the `addflow` command:
 
-    ravel> rt addflow h4 h3 1
+    ravel> rt addflow h4 h3
     ravel> orch run
 
 Observe that the flow is installed in the configuration table (`cf`) and the the hosts can ping each other:
@@ -261,7 +261,7 @@ Observe that the flow is installed in the configuration table (`cf`) and the the
 
 Now, try adding a flow that is not in the approved flow or host whitelist, by proposing a flow with an external host as the source:
 
-    ravel> rt addflow h1 h2 1
+    ravel> rt addflow h1 h2
 
 Observe a new row is inserted into the firewall violation table.  Next, commit the change:
 

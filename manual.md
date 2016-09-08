@@ -130,9 +130,9 @@ For example:
 from ravel.app import AppConsole
 
 class MyConsole(AppConsole):
-        do_echo(self, line):
-                "Echo input"
-                print "MyConsole says:", line
+    do_echo(self, line):
+        "Echo input"
+        print "MyConsole says:", line
 
 shortcut = "my"
 description = "my demo console"
@@ -147,3 +147,23 @@ The [AppConsole](api/classravel_1_1app_1_1AppConsole.html) class contains the pr
 * `self.components`: a list of [ravel.app.AppComponent](api/classravel_1_1app_1_1AppComponent.html), the application's SQL components (i.e., tables, views, rules)
 
 For more information about the application superclasses and their properties, see the [API](api/annotated.html).
+
+
+
+### Measuring Performance
+The Ravel CLI provides the command `time` to measure the execution time of a command, similar to the Linux time command: `time [command] [command args]`.
+
+For more granular inspection of performance, the Ravel CLI provides a `profile` command.  This command reports the execution time of manually-defined blocks of code.  When extending the Ravel runtime or developing applications, a new block of code can be defined using the class [profiling.PerfCounter](api/classravel_1_1profiling_1_1PerfCounter.html).  The constructor accepts a string to identify the block of code.  The functions start() and stop() define the start and end of the code to be profile:
+
+{% highlight python %}
+from ravel.profiling import PerfCounter
+
+def my_profiled_function():
+    pc = PerfCounter("name of code block")
+    pc.start()
+
+    # will measure the execution time of the code here
+
+    pc.stop()
+
+{% endhighlight %}
