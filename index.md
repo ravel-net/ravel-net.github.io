@@ -18,9 +18,7 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 #### 2016 ####
 
-<!-- * March 14: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/sosr16slide.pdf) [[demo]](demo.mp4) -->
-<!-- * March 14: [Ravel v0.1](http://github.com/ravel-net/ravel) is released -->
-
+* September 10: [Ravel v0.2](https://github.com/ravel-net/ravel/releases/tag/v0.2) released
 * March 14: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](demo.mp4)
 * March 14: [Ravel v0.1](https://github.com/ravel-net/ravel/releases/tag/v0.1) released
 
