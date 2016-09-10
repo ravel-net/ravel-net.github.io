@@ -129,19 +129,19 @@ Here, orchestration will assign `fw` the highest priority.  Priorities are used 
 
 Under orchestration, each application can propose a change.  To commit a change and check for conflicts with other running applications, use `orch run`.  To automatically commit changes, use `orch auto on`.  To disable, use `orch auto off`.  For example, to propose adding a flow:
 
-    ravel> orch load routing fw
+    ravel> orch load routing
     ravel> rt addflow h1 h2
     ravel> orch run
 
 This is the same as:
 
-    ravel> orch load routing fw
+    ravel> orch load routing
     ravel> orch auto on
     ravel> rt addflow h1 h2
 
 To report execution or profiled times for flow modification commands, use `orch auto on`:
 
-    ravel> orch load routing fw
+    ravel> orch load routing
     ravel> orch auto on
     ravel> profile rt addflow h1 h2
     ravel> time rt addflow h1 h3
@@ -232,9 +232,9 @@ To remove a host or flow from the whitelist:
 
 ### Part 5: Orchestration Demo
 
-Now, let's see orchestration in action by combining the routing and firewall applications.  First, start the Ravel CLI with the toy topology in the _topo_ directory:
+Now, let's see orchestration in action by combining the routing and firewall applications.  First, start the Ravel CLI with a 4-switch, 4-host topology:
 
-    $ sudo ./ravel.py --custom=topo/toy_dtp.py --topo mytopo
+    $ sudo ./ravel.py --linear,4
 
 Load the routing and firewall applications, assigning higher priority to the firewall application:
 
@@ -268,3 +268,55 @@ Observe a new row is inserted into the firewall violation table.  Next, commit t
     ravel> orch run
 
 Observe that the firewall application repairs the violation by removing the proposed flow from the reachability table `rm`.
+
+
+
+-------------------------
+
+### Part 6: Network State Changes: Rerouting
+
+Ravel can react to changes in network state (e.g., link or switch failures).  This part of the walkthrough will demonstrate the routing application's ability to reroute installed flows automatically when links fail.
+
+
+First, start Ravel with the custom diamond topology:
+
+    $ sudo ./ravel.py --topo=diamond --custom=~/topo/diamond.py
+
+
+This will start Ravel and Mininet with the following topology (hostnames are listed above node IDs):
+
+{:refdef: style="text-align: center;"}
+![diamond topology diagram]({{site.url}}/images/diamond_topo.png)
+{: refdef}
+ 
+Load the routing application under orchestration and install a flow between the two hosts in the topology:
+
+    > orch load routing
+    > rt addflow h1 h2
+    > orch run
+
+Examine the installed path by querying the configuration table `cf`:
+
+    > p select * from cf;
+        fid      pid     sid      nid
+      -----  -------  -------  -------
+         1        5        1       3
+         1        1        3       4
+         1        3        4       6
+
+Notice that the install path is: 5 -> 1 -> 3 -> 4 -> 6, or using hostnames: h1 -> s1 -> s3 -> s4 -> h2.
+
+Now, let's take the links s1-s3 and s3-s4 by taking switch s3 offline:
+
+    > m switch s3 stop
+
+Examine the configuration table again:
+
+    > p select * from cf;
+        fid      pid     sid      nid
+      -----  -------  -------  -------
+         1        5        1       2
+         1        1        2       4
+         1        2        4       6
+
+Notice that the path is rerouted to now use switch s2.  The new path is now: 5 -> 1 -> 2 -> 4 -> 6, or: h1 -> s1 -> s2 -> s4 -> h2.
