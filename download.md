@@ -18,8 +18,8 @@ To try Ravel, download a virtual machine with all software pre-installed or down
 ### Option 1: Pre-Packaged VM
 
 1. Download one of the VM images with Ravel pre-installed:
-  - [Ubuntu 14.04 LTS (32-bit)](http://downloads.ravel-net.org/ravelvm32.zip)
-  - [Ubuntu 14.04 LTS (64-bit)](http://downloads.ravel-net.org/ravelvm64.zip)
+  - [Ubuntu 14.04 LTS (32-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-i386.zip)
+  - [Ubuntu 14.04 LTS (64-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-amd64.zip)
 
 2. Install virtualization software, such as [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox) or [VMWare](https://my.vmware.com/en/web/vmware/downloads)
 3. Extract the downloaded zip file containing the VM disk
@@ -86,3 +86,15 @@ Ravel supports multiple protocols for database triggers to interact with the Ope
 
     postgres ALL=(ALL) NOPASSWD:ALL
 
+
+-------------------------
+
+### VM Archive
+
+* Ravel v0.2
+  - [Ubuntu 14.04 LTS (32-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-i386.zip)
+  - [Ubuntu 14.04 LTS (64-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-amd64.zip)
+
+* Ravel v0.1
+  - [Ubuntu 14.04 LTS (32-bit), Ravel v0.1](http://downloads.ravel-net.org/ravelvm-0.1-i386.zip)
+  - [Ubuntu 14.04 LTS (64-bit), Ravel v0.1](http://downloads.ravel-net.org/ravelvm-0.1-amd64.zip)
