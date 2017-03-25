@@ -18,11 +18,17 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
 
+#### 2017 ####
+* March: Short position paper _Reflections on Data Integration for SDN_ presented at [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/) [[paper]](docs/sdnnfv17.pdf) [[slides]](docs/sdnnfv17-slides.pdf)
+* March: Poster _Automating SDN Composition: A Database Perspective_ accepted to SOSR '17
+* January: Short position paper _Reflections on Data Integration for SDN_ invited to [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/)
+
+
 #### 2016 ####
 
-* September 10: [Ravel v0.2](https://github.com/ravel-net/ravel/releases/tag/v0.2) released
-* March 14: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/demo.mp4)
-* March 14: [Ravel v0.1](https://github.com/ravel-net/ravel/releases/tag/v0.1) released
+* September: [Ravel v0.2](https://github.com/ravel-net/ravel/releases/tag/v0.2) released
+* March: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/demo.mp4)
+* March: [Ravel v0.1](https://github.com/ravel-net/ravel/releases/tag/v0.1) released
 
 
 <br/>
