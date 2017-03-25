@@ -20,7 +20,7 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 #### 2017 ####
 * March: Short position paper _Reflections on Data Integration for SDN_ presented at [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/) [[paper]](docs/sdnnfv17.pdf) [[slides]](docs/sdnnfv17-slides.pdf)
-* March: Poster _Automating SDN Composition: A Database Perspective_ accepted to SOSR '17
+* March: Poster _Automating SDN Composition: A Database Perspective_ accepted to [SOSR '17](http://conferences.sigcomm.org/sosr/2017/)
 * January: Short position paper _Reflections on Data Integration for SDN_ invited to [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/)
 
 
