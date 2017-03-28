@@ -12,7 +12,7 @@ group: navigation
 -------------------------
 
 ### Ravel Overview
-Ravel allows multiple applications to execute simultaneously and collectively drive network control.  This is accomplished through _orchestration_.  A Ravel user sets priorities on the orchestrated applications using the ordering passed to the `orch load` command.  (For more details, see the orchestration demo in the [Walkthrough]({{site.url}}walkthrough#part-4-orchestration).)
+Ravel allows multiple applications to execute simultaneously and collectively drive network control.  This is accomplished through _orchestration_.  A Ravel user sets priorities on the orchestrated applications using the ordering passed to the `orch load` command.  (For more details, see the orchestration demo in the [Walkthrough]({{site.url}}/walkthrough#part-4-orchestration).)
 
 Applications can _propose_ updates (through an insertion, deletion, or update to one of its views), which are then checked against the policies of all other orchestrated applications.  If the proposed update violates the constraints of another application, a higher priority application can overwrite the update.
 

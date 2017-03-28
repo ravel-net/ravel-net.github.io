@@ -10,7 +10,7 @@ Ravel is a software-defined networking (SDN) controller that uses a standard SQL
 
 In Ravel, the entire network control infrastructure is implemented within a SQL database.  Abstractions of the network take the form of _SQL views_ expressed by SQL queries that can be instantiated and extended on the fly.  To allow multiple simultaneous abstractions to collectively drive control, Ravel automatically _orchestrates_ the abstractions to merge multiple views into a coherent forwarding behavior.
 
-For more information, read through our [Publications]({{site.url}}publications).
+For more information, read through our [Publications]({{site.url}}/publications).
 
 <br/>
 
@@ -27,7 +27,7 @@ For more information, read through our [Publications]({{site.url}}publications).
 #### 2016 ####
 
 * September: [Ravel v0.2](https://github.com/ravel-net/ravel/releases/tag/v0.2) released
-* March: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/demo.mp4)
+* March: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/sosr_demo.mp4)
 * March: [Ravel v0.1](https://github.com/ravel-net/ravel/releases/tag/v0.1) released
 
 
@@ -35,6 +35,6 @@ For more information, read through our [Publications]({{site.url}}publications).
 
 ## Get Started ##
 
-Download the [Ravel VM]({{site.url}}download#option-1-pre-packaged-vm) or [install from source]({{site.url}}download#option-2-install-from-source) from our [GitHub repository](http://github.com/ravel-net/ravel).  Then try the [Walkthrough]({{site.url}}walkthrough).
+Download the [Ravel VM]({{site.url}}/download#option-1-pre-packaged-vm) or [install from source]({{site.url}}/download#option-2-install-from-source) from our [GitHub repository](http://github.com/ravel-net/ravel).  Then try the [Walkthrough]({{site.url}}/walkthrough).
 
-Or develop your own applications.  Read our [Developer Guide]({{site.url}}manual) and browse through the [API](api/annotated.html).
+Or develop your own applications.  Read our [Developer Guide]({{site.url}}/manual) and browse through the [API](api/annotated.html).
