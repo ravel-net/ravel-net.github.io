@@ -9,9 +9,9 @@ group: navigation
 
 <!-- ---   -->
 
-Anduo Wang and Jason Croft. **Automating SDN Composition: A Database Approach**. In __2017 Symposium on SDN Research (SOSR '17), Poster Session__, Santa Clara, California, USA, April 2017.
+Anduo Wang and Jason Croft. **Automating SDN Composition: A Database Approach**. In _2017 Symposium on SDN Research (SOSR '17), Poster Session_, Santa Clara, California, USA, April 2017.
 
-Anduo Wang, Jason Croft, and Eduard Dragut. **Reflections on Data Integration for SDN**. In _2017 ACM International Workshop on Security in Software Defined Networks and Network Function Virtualization (SDN-NFV Security '17)__, Scottsdale, Arizona, USA, March 2017. (Invited paper) [[paper]](docs/sdnnfv17.pdf) [[slides]](docs/sdnnfv17-slides.pdf)
+Anduo Wang, Jason Croft, and Eduard Dragut. **Reflections on Data Integration for SDN**. In _2017 ACM International Workshop on Security in Software Defined Networks and Network Function Virtualization (SDN-NFV Security '17)_, Scottsdale, Arizona, USA, March 2017. (Invited paper) [[paper]](docs/sdnnfv17.pdf) [[slides]](docs/sdnnfv17-slides.pdf)
 
 Anduo Wang, Xueyuan Mei, Jason Croft, Matthew Caesar, and Brighten Godfrey.  **Ravel: A Database-Defined Network**.  In _2016 Symposium on SDN Research (SOSR '16)_, Santa Clara, CA, March 2016.  [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/demo.mp4)
 
