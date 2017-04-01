@@ -8,6 +8,7 @@ baseurl: /
 # domain_name: 'ravel-net.org'
 
 permalink: /:categories/:year/:month/:day/:title
+# relative_permalinks: true
 
 # production_url : http://ravel-net.github.io
 
