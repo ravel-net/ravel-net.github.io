@@ -19,15 +19,14 @@ For more information, read through our [Publications]({{site.url}}/publications)
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
 
 #### 2017 ####
-* April: Poster _Automating SDN Composition: A Database Perspective_ [SOSR '17](http://conferences.sigcomm.org/sosr/2017/) [[extended abstract]](docs/sosr17extendedabstract.pdf) [[poster]](docs/sosr17poster.pdf)
+* April: Poster _Automating SDN Composition: A Database Perspective_ presented at [SOSR '17](http://conferences.sigcomm.org/sosr/2017/) [[extended abstract]](docs/sosr17extendedabstract.pdf) [[poster]](docs/sosr17poster.pdf)
 * March: Short position paper _Reflections on Data Integration for SDN_ presented at [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/) [[paper]](docs/sdnnfv17.pdf) [[slides]](docs/sdnnfv17-slides.pdf)
-* January: Short position paper _Reflections on Data Integration for SDN_ invited to [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/)
 
 
 #### 2016 ####
 
 * September: [Ravel v0.2](https://github.com/ravel-net/ravel/releases/tag/v0.2) released
-* March: _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/sosr_demo.mp4)
+* March: Short paper _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/sosr_demo.mp4)
 * March: [Ravel v0.1](https://github.com/ravel-net/ravel/releases/tag/v0.1) released
 
 
