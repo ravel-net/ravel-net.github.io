@@ -8,6 +8,9 @@ group: navigation
 {% include JB/setup %}
 
 <!-- ---   -->
+Anduo Wang. _A Semantic Approach to Modularizing SDN Software_, In [NSDI 2018](https://www.usenix.org/conference/nsdi18/glance) poster session
+
+Anduo Wang. _Database Criteria for Network Policy Chain_, In [SDN-NFV Security 18](https://www.cs.clemson.edu/nss/sdnfvsec2018/program.html)
 
 Anduo Wang and Jason Croft. **Automating SDN Composition: A Database Approach**. In _2017 Symposium on SDN Research (SOSR '17), Poster Session_, Santa Clara, California, USA, April 2017. [[extended abstract]](docs/sosr17extendedabstract.pdf) [[poster]](docs/sosr17poster.pdf)
 
