@@ -20,8 +20,8 @@ For more information, read through our [Publications]({{site.url}}/publications)
 
 #### 2018 ####
 
-April, 2018: Poster _A Semantic Approach to Modularizing SDN Software_, [NSDI 18](https://www.usenix.org/conference/nsdi18/glance)
-March, 2018: _Database Criteria for Network Policy Chain_, [SDN-NFV Security 18](https://www.cs.clemson.edu/nss/sdnfvsec2018/program.html)
+* April, 2018: Poster _A Semantic Approach to Modularizing SDN Software_, [NSDI 18](https://www.usenix.org/conference/nsdi18/glance)
+* March, 2018: _Database Criteria for Network Policy Chain_, [SDN-NFV Security 18](https://www.cs.clemson.edu/nss/sdnfvsec2018/program.html)
 
 #### 2017 ####
 * April: Poster _Automating SDN Composition: A Database Perspective_ presented at [SOSR '17](http://conferences.sigcomm.org/sosr/2017/) [[extended abstract]](docs/sosr17extendedabstract.pdf) [[poster]](docs/sosr17poster.pdf)
