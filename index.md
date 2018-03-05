@@ -18,6 +18,11 @@ For more information, read through our [Publications]({{site.url}}/publications)
 
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
 
+#### 2018 ####
+
+April, 2018: Poster _A Semantic Approach to Modularizing SDN Software_, [NSDI 18](https://www.usenix.org/conference/nsdi18/glance)
+March, 2018: _Database Criteria for Network Policy Chain_, [SDN-NFV Security 18](https://www.cs.clemson.edu/nss/sdnfvsec2018/program.html)
+
 #### 2017 ####
 * April: Poster _Automating SDN Composition: A Database Perspective_ presented at [SOSR '17](http://conferences.sigcomm.org/sosr/2017/) [[extended abstract]](docs/sosr17extendedabstract.pdf) [[poster]](docs/sosr17poster.pdf)
 * March: Short position paper _Reflections on Data Integration for SDN_ presented at [SDN-NFV Security '17](https://www.cs.clemson.edu/nss/sdnfvsec2017/) [[paper]](docs/sdnnfv17.pdf) [[slides]](docs/sdnnfv17-slides.pdf)
