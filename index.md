@@ -20,6 +20,7 @@ For more information, read through our [Publications]({{site.url}}/publications)
 
 #### 2018 ####
 
+* June: [Ravel v0.2.1](https://github.com/ravel-net/ravel/releases/tag/v0.2.1) released
 * April, 2018: Poster _A Semantic Approach to Modularizing SDN Software_, [NSDI 18](https://www.usenix.org/conference/nsdi18/glance)
 * March, 2018: _Database Criteria for Network Policy Chain_, [SDN-NFV Security 18](https://www.cs.clemson.edu/nss/sdnfvsec2018/program.html)
 
