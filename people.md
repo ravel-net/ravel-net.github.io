@@ -11,7 +11,7 @@ group: navigation
 * [Anduo Wang](http://anduowang.github.io/), Temple University
 * [Zhijia Chen](https://zhijiachen.github.io/), Temple University
 
-Past collaborators:
+**External collaborators**:
 
 * [Jason Croft](http://jasoncroft.info/), UIUC
 * Xueyuan Mei, UIUC
