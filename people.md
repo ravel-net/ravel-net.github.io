@@ -9,10 +9,17 @@ group: navigation
 <!-- ------------------------- -->
 
 * [Anduo Wang](http://anduowang.github.io/), Temple University
+<<<<<<< HEAD
 
 Past collaborators
 
 * Zhijia Chen, Temple University
+=======
+* [Zhijia Chen](https://zhijiachen.github.io/), Temple University
+
+#### External collaborators:
+
+>>>>>>> ed335f2226ccaa210b55548dcad430c19f4c24d9
 * [Jason Croft](http://jasoncroft.info/), UIUC
 <!-- * Xueyuan Mei, UIUC -->
 * [Matthew Caesar](http://web.engr.illinois.edu/~caesar/), UIUC

@@ -17,13 +17,12 @@ To try Ravel, download a virtual machine with all software pre-installed or down
 
 ### Option 1: Pre-Packaged VM
 
-1. Download one of the VM images with Ravel pre-installed:
-  - [Ubuntu 14.04 LTS (32-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-i386.zip)
-  - [Ubuntu 14.04 LTS (64-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-amd64.zip)
+1. Download the VM images with Ravel pre-installed:
+    - [Ubuntu 18.04 LTS (64-bit), Ravel v0.2.1](https://github.com/ravel-net/ravel/releases/download/v0.2.1/ravelvm-0.2.1-amd64.zip)
 
 2. Install virtualization software, such as [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox) or [VMWare](https://my.vmware.com/en/web/vmware/downloads)
-3. Extract the downloaded zip file containing the VM disk
-4. Create a new VM, using the extracted vmdk file (_ravelvm32.vmdk_ or _ravelvm32.vmdk_) as the virtual disk
+3. Extract the downloaded zip file containing the VM image.
+4. Import appliance from the VM image.
 
 To set up a new virtual machine in VirtualBox:
 
@@ -48,7 +47,7 @@ Log in to the VM with the username `ravel` and password `ravel`.  The sudo passw
 2. Run the Ravel install script:
 
     `cd ravel`   
-    `git checkout v0.1`   
+    `git checkout v0.2.1`   
     `util/install.sh [options]`
 
 3. Update _ravel.cfg_ with the __*absolute*__ path to Pox.  If installing Pox with _install.sh_, this will be Ravel's parent directory.
@@ -90,6 +89,9 @@ Ravel supports multiple protocols for database triggers to interact with the Ope
 -------------------------
 
 ### VM Archive
+
+* Ravel v0.2.1
+  - [Ubuntu 18.04 LTS (64-bit), Ravel v0.2.1](https://github.com/ravel-net/ravel/releases/download/v0.2.1/ravelvm-0.2.1-amd64.zip)
 
 * Ravel v0.2
   - [Ubuntu 14.04 LTS (32-bit), Ravel v0.2](http://downloads.ravel-net.org/ravelvm-0.2-i386.zip)
