@@ -18,6 +18,12 @@ For more information, read through our [Publications]({{site.url}}/publications)
 
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
 
+#### 2019 ####
+
+* June, 2019: _A Logical Approach to Representing and Reasoning About Interdomain Routing Policies_ [DATALOG 2.0 2019](https://sites.sju.edu/plw/datalog2/)
+* June, 2019: _Internet Routing and Non-monotonic Reasoning_ [LPNMR 2019](https://sites.sju.edu/plw/lpnmr-2019/) [[paper](http://anduowang.github.io/docs/lpnmr19.pdf)]
+* April, 2019: _Enabling Policy Innovation in Interdomain Routing: A Software-Defined Approach_ [SOSR 2019](https://conferences.sigcomm.org/sosr/2019/) [[paper](http://anduowang.github.io/docs/p94.pdf)] [[slide](http://anduowang.github.io/docs/p94-sosr19.pdf)]
+
 #### 2018 ####
 
 * June: [Ravel v0.2.1](https://github.com/ravel-net/ravel/releases/tag/v0.2.1) released
