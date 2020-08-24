@@ -25,6 +25,7 @@ This walkthrough will demonstrate the Ravel CLI commands.  Throughout the tutori
 
 To display the help message describing Ravel's startup options:
 
+    $ cd ravel
     $ sudo ./ravel.py --help
 
 
@@ -234,7 +235,7 @@ To remove a host or flow from the whitelist:
 
 Now, let's see orchestration in action by combining the routing and firewall applications.  First, start the Ravel CLI with a 4-switch, 4-host topology:
 
-    $ sudo ./ravel.py --linear,4
+    $ sudo ./ravel.py --topo=linear,4
 
 Load the routing and firewall applications, assigning higher priority to the firewall application:
 
@@ -252,7 +253,7 @@ Launch a watch window to observe insertions to the configuration table, firewall
 
 Add a flow that is in the whitelist of approved flows, and specify that the flow should be routed through a firewall by appending a 1 to the `addflow` command:
 
-    ravel> rt addflow h4 h3
+    ravel> rt addflow h4 h3 1
     ravel> orch run
 
 Observe that the flow is installed in the configuration table (`cf`) and the the hosts can ping each other:
@@ -280,7 +281,7 @@ Ravel can react to changes in network state (e.g., link or switch failures).  Th
 
 First, start Ravel with the custom diamond topology:
 
-    $ sudo ./ravel.py --topo=diamond --custom=~/topo/diamond.py
+    $ sudo ./ravel.py --topo=diamond --custom=./topo/diamond.py
 
 
 This will start Ravel and Mininet with the following topology (hostnames are listed above node IDs):
