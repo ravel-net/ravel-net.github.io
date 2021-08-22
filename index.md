@@ -10,7 +10,9 @@ Ravel is a software-defined networking (SDN) controller that uses a standard SQL
 
 In Ravel, the entire network control infrastructure is implemented within a SQL database.  Abstractions of the network take the form of _SQL views_ expressed by SQL queries that can be instantiated and extended on the fly.  To allow multiple simultaneous abstractions to collectively drive control, Ravel automatically _orchestrates_ the abstractions to merge multiple views into a coherent forwarding behavior.
 
-For more information, read through our [Publications]({{site.url}}/publications).
+<!-- For more information, read through our [Publications]({{site.url}}/publications). -->
+
+This project is supported by the National Science Foundation [Award CNS-1909450](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1909450&HistoricalAwards=false) and [CNS 1657285](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1657285&HistoricalAwards=false).
 
 <br/>
 
@@ -22,7 +24,7 @@ For more information, read through our [Publications]({{site.url}}/publications)
 #### 2021 ####
 
 * November, 2021: _Faure: A Partial Approach to Network Analysis_, [HotNets 2021](https://conferences.sigcomm.org/hotnets/2021/)
-* August, 2021: _Sarasate: A Strong Representation System for Networking Policies_, [SIGCOMM 2021 demo](https://conferences.sigcomm.org/sigcomm/2021/cf-posters.html) [[Extended abstract](http://anduowang.github.io/docs/sigcomm2021demo.pdf)]
+* August, 2021: Demo _Sarasate: A Strong Representation System for Networking Policies_, [SIGCOMM 2021 demo](https://conferences.sigcomm.org/sigcomm/2021/cf-posters.html) [[Extended abstract](http://anduowang.github.io/docs/sigcomm2021demo.pdf)]
 
 #### 2020 ####
 
@@ -37,7 +39,7 @@ For more information, read through our [Publications]({{site.url}}/publications)
 #### 2018 ####
 
 * June: [Ravel v0.2.1](https://github.com/ravel-net/ravel/releases/tag/v0.2.1) released
-* April, 2018: Poster _A Semantic Approach to Modularizing SDN Software_, [NSDI 18](https://www.usenix.org/conference/nsdi18/glance)
+* April, 2018: Poster _A Semantic Approach to Modularizing SDN Software_, [NSDI 18 demo](https://www.usenix.org/conference/nsdi18/glance)
 * March, 2018: _Database Criteria for Network Policy Chain_, [SDN-NFV Security 18](https://www.cs.clemson.edu/nss/sdnfvsec2018/program.html)
 
 #### 2017 ####
