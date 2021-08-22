@@ -16,7 +16,17 @@ For more information, read through our [Publications]({{site.url}}/publications)
 
 ## News ##
 
+* Sarasate video: coming soon
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
+
+#### 2021 ####
+
+* November, 2021: _Faure: A Partial Approach to Network Analysis_, [HotNets 2021](https://conferences.sigcomm.org/hotnets/2021/)
+* August, 2021: _Sarasate: A Strong Representation System for Networking Policies_, [SIGCOMM 2021 demo](https://conferences.sigcomm.org/sigcomm/2021/cf-posters.html) [[Extended abstract](http://anduowang.github.io/docs/sigcomm2021demo.pdf)]
+
+#### 2020 ####
+
+* March, 2020: _A Case of Knowledge-driven Policy Management: Bringing Discipline to Internet Routing_, [SOSR 2020](https://conferences.sigcomm.org/sosr/2020/index.html) [[poster](http://anduowang.github.io/docs/sosr20posters-paper4.pdf)]
 
 #### 2019 ####
 
