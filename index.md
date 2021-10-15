@@ -16,13 +16,16 @@ This project is supported by the National Science Foundation [Award CNS-1909450]
 
 <br/>
 
-## News ##
+## Useful links ##
 
-* Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
+* [Fauré 1.0 Release](https://github.com/ravel-net/Faure/releases/tag/v1.0)
+* Sarasate video [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), and [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3min SIGCOMM 2021 demo)
+* Ravel video [[walkthrough]](videos/walkthrough.mp4)
 
 #### 2021 ####
 
 * November, 2021: _Faure: A Partial Approach to Network Analysis_, [HotNets 2021](https://conferences.sigcomm.org/hotnets/2021/) [[paper](http://anduowang.github.io/docs/faure.pdf)]
+* October, [Fauré 1.0 released](https://github.com/ravel-net/Faure/releases/tag/v1.0): shallow embedding of c-tables in PostgreSQL
 * Sarasate video (a strong representation system for network policies using conditional tables): [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), the [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3min SIGCOMM 2021 demo)
 * August, 2021: Demo _Sarasate: A Strong Representation System for Networking Policies_, [SIGCOMM 2021 demo](https://conferences.sigcomm.org/sigcomm/2021/cf-posters.html) [[Extended abstract](http://anduowang.github.io/docs/sigcomm2021demo.pdf)]
 
@@ -49,6 +52,7 @@ This project is supported by the National Science Foundation [Award CNS-1909450]
 
 #### 2016 ####
 
+* Ravel video walkthrough: [[walkthrough]](videos/walkthrough.mp4)
 * September: [Ravel v0.2](https://github.com/ravel-net/ravel/releases/tag/v0.2) released
 * March: Short paper _Ravel: A Database-Defined Network_ presented at [SOSR '16](http://conferences.sigcomm.org/sosr/2016/) [[paper]](docs/sosr16.pdf) [[slides]](docs/SOSR16slide2.pdf) [[demo]](videos/sosr_demo.mp4)
 * March: [Ravel v0.1](https://github.com/ravel-net/ravel/releases/tag/v0.1) released
