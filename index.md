@@ -15,7 +15,7 @@ Managing and reasoning about networks by data (knowledge) management. (Supported
 
 <br/>
 
-## Useful links ##
+### quick links ##$
 
 * [Fauré 1.0 Release](https://github.com/ravel-net/Faure/releases/tag/v1.0)
 * Sarasate video [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), and [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3min SIGCOMM 2021 demo)
