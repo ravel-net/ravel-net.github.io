@@ -18,12 +18,12 @@ This project is supported by the National Science Foundation [Award CNS-1909450]
 
 ## News ##
 
-* Sarasate video: [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), the [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3min SIGCOMM 2021 demo)
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
 
 #### 2021 ####
 
-* November, 2021: _Faure: A Partial Approach to Network Analysis_, [HotNets 2021](https://conferences.sigcomm.org/hotnets/2021/)
+* November, 2021: _Faure: A Partial Approach to Network Analysis_, [HotNets 2021](https://conferences.sigcomm.org/hotnets/2021/) [[paper](http://anduowang.github.io/docs/faure.pdf)]
+* Sarasate video (a strong representation system for network policies using conditional tables): [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), the [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3min SIGCOMM 2021 demo)
 * August, 2021: Demo _Sarasate: A Strong Representation System for Networking Policies_, [SIGCOMM 2021 demo](https://conferences.sigcomm.org/sigcomm/2021/cf-posters.html) [[Extended abstract](http://anduowang.github.io/docs/sigcomm2021demo.pdf)]
 
 #### 2020 ####
