@@ -18,7 +18,7 @@ This project is supported by the National Science Foundation [Award CNS-1909450]
 
 ## News ##
 
-* Sarasate video: [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), the [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3m for SIGCOMM demo)
+* Sarasate video: [extended version (17min)](https://drive.google.com/file/d/1KcZKSrbqUhAxqfU4tFIE9Vd2WlOt87LW/view?usp=sharing), the [shorter version](https://www.youtube.com/watch?v=w9nH2et3zdI&authuser=1) (3min SIGCOMM 2021 demo)
 * Ravel video walkthrough is up: [[walkthrough]](videos/walkthrough.mp4)
 
 #### 2021 ####
