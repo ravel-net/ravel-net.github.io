@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ravel&#58; A Database-Defined Network
-description: "Ravel&#58; Networking through unconventional data management"
+description: "Networking as data (knowledge) management."
 ---
 {% include JB/setup %}
 
