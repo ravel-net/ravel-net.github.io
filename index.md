@@ -5,8 +5,8 @@ description: "Networking as data (knowledge) management."
 ---
 {% include JB/setup %}
 
-In the battle with system complexity, if knowledge representation and logic reasoning give a deep answer, does networking make a profitable problem? This project (Supported by the National Science Foundation [Award CNS-1909450](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1909450&HistoricalAwards=false) and [CNS 1657285](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1657285&HistoricalAwards=false)) explores the pain points in today's network analysis --- such as unavailable information, uncertain environments, and non-monotonic dynamic behaviors --- to motivate our initial conjectures to this question.  <!-- _Why a database?_ SDN fundamentally revolves around data representation--representation of the network topology and forwarding, as well as the higher-level abstractions useful to applications. -->
-For more information, please contact anduo.wang@gmail.com
+In the battle with system complexity, if knowledge representation and logic reasoning give a deep answer, does networking make a profitable problem? This project (supported by the National Science Foundation [Award CNS-1909450](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1909450&HistoricalAwards=false) and [CNS 1657285](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1657285&HistoricalAwards=false)) explores the pain points in today's network analysis --- such as unavailable information, uncertain environments, and non-monotonic dynamic behaviors --- to motivate our initial conjectures to this question.  <!-- _Why a database?_ SDN fundamentally revolves around data representation--representation of the network topology and forwarding, as well as the higher-level abstractions useful to applications. -->
+For more information, please contact <anduo.wang@gmail.com>.
 <!-- The next presenter is Anduo Wang from Temple University. Her research concerns the battle with system complexity and asks, if knowledge representation and logic reasoning give a deep answer, does networking make a profitable problem? -->
 
 
