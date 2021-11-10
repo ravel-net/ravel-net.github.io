@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Knowledge, Reasoning, and Networking
-description: "Networking as data (knowledge) management."
+description: "Knowledge, Reasoning, and Networking"
 ---
 {% include JB/setup %}
 
